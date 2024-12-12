@@ -9,6 +9,18 @@ function adicionar() {
     let valorProduto = parseFloat(produto.split('R$')[1]);
     let quantidade = document.getElementById('quantidade').value;
 
+    //Faz a validação da variável produto
+    if (!produto || produto.trim() === '') {
+      alert('Insira um produto válido');
+      return;
+    };
+
+    //Faz a validação da variável quantidade
+    if (isNaN(quantidade) || quantidade <= 0) {
+      alert('Insira um número válido');
+      return;
+    };
+
     // calculando o subtotal
     let preco = quantidade * valorProduto;
 
